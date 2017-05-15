@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">FETL QR code</string>
+    <string name="login">ลงชื่อใช้งาน</string>
+    <string name="user">User :</string>
+    <string name="password">Password :</string>
+</resources>
