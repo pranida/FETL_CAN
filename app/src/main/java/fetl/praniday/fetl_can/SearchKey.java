@@ -10,10 +10,10 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 /**
- * Created by Pranida.Y on 05/18/17.
+ * Created by masterUNG on 5/18/2017 AD.
  */
 
-public class SearchKey extends AsyncTask<String, Void,String>{
+public class SearchKey extends AsyncTask<String, Void, String>{
 
     private Context context;
 
@@ -21,25 +21,22 @@ public class SearchKey extends AsyncTask<String, Void,String>{
         this.context = context;
     }
 
-
     @Override
-    protected String doInBackground(String... params) {
+    protected String doInBackground(String... strings) {
 
         try {
 
             MyConstant myConstant = new MyConstant();
             OkHttpClient okHttpClient = new OkHttpClient();
             RequestBody requestBody = new FormEncodingBuilder()
-                    .add("isAdd" ,"true")
-                    .add("Keycode" , params[0])
+                    .add("isAdd", "true")
+                    .add("Keycode", strings[0])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder .url(myConstant.getUrlGetProduceWhereCode())
+            Request request = builder.url(myConstant.getUrlGetProduceWhereCode())
                     .post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
-            return  response.body().string();
-
-
+            return response.body().string();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,4 +45,4 @@ public class SearchKey extends AsyncTask<String, Void,String>{
 
 
     }
-}//main class
+}   // Main Class
